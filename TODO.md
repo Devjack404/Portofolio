@@ -1,5 +1,0 @@
-- [x] Fix CSS link path in index.html from "style.css" to "css/style.css"
-- [x] Fix nav structure: wrap <li> elements in <ul>
-- [x] Fix GSAP typo: "duartion" to "duration" in inline script
-- [x] Remove duplicate GSAP script load (local js/gsap.min.js since CDN is used)
-- [x] Test the page by opening in browser

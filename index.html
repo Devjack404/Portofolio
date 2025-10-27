@@ -11,80 +11,119 @@
     </style>
     <title>BTNG Web</title>
     <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png">
-    
 </head>
-<body>
-    <div class="bg-white border-gray-200">
-        <nav>
-            <ul class="flex gap-x-10 justify-center text-2xl">
-                <li>Karya</li>
-                <li>Resume</li>
-                <li>Keterampilan</li>
-                <li>Kontak - Unduh</li>
-                <button class="bg-black text-white py-2 px-4 rounded">Resume</button>
-            </ul>
-            
-        </nav>
-    </div>
-
-    <div class="min-h-screen bg-gray-900 flex items-center justify-center p-4">
-        <div class="max-w-full w-full bg-[#1b0826] p-9 rounded-2xl border-2 border-[#5a4382] shadow-2xl relative overflow-hidden flex">
-            <img class="rounded-xl border border-purple-500 overflow-hidden shadow-lg relative" src="https://gerold.themejunction.net/wp-content/uploads/2024/05/hero-2.png" alt="a Man" width="500" height="600">
-            <h1 class="text-3xl text-white mt-50">Halo, saya Juan Richard<br><span class="text-2xl">Fullstack Web Developer</span></h1>
-            
-            <button class="bg-black text-white font-bold py-2 px-4 rounded">work</button>
-            <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded">Instagram</button>
-            <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded">X</button>
-
-            <div class="flex items-start space-x-8"></div>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-purple-600">Juan Richard</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#hero" class="hover:text-purple-600 transition">Home</a>
+                <a href="#portfolio" class="hover:text-purple-600 transition">Portfolio</a>
+                <a href="#contact" class="hover:text-purple-600 transition">Contact</a>
+            </div>
+            <button class="md:hidden text-purple-600" id="menu-toggle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-    </div>
-    
-
-    <div class="H2">
-        <div>
-            <h2 class="satu">1%</h2>
-            <p>Pencapaian Pekerjaan</p>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-4 pt-2 pb-3 space-y-1 bg-white border-t">
+                <a href="#hero" class="block px-3 py-2 text-base font-medium hover:text-purple-600">Home</a>
+                <a href="#portfolio" class="block px-3 py-2 text-base font-medium hover:text-purple-600">Portfolio</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium hover:text-purple-600">Contact</a>
+            </div>
         </div>
+    </nav>
 
-         <div>
-            <h2 class="dua">0</h2>
-            <p>Tahun Pengalaman</p>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 flex items-center justify-center p-4">
+        <div class="max-w-6xl w-full bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-purple-500/30 shadow-2xl">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <img class="w-full md:w-1/2 rounded-xl border border-purple-500 shadow-lg" src="https://gerold.themejunction.net/wp-content/uploads/2024/05/hero-2.png" alt="Juan Richard">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+                        Hello, I'm Juan Richard -<br>
+                        Fullstack Web Developer
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-6">
+                        I love coding and design beautifully simple things,<br>
+                        and I love what I do. Just simple like that!
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <button class="bg-purple-600 text-white font-bold py-3 px-6 rounded hover:bg-purple-700 transition">Work</button>
+                        <button class="bg-blue-500 text-white font-bold py-3 px-6 rounded hover:bg-blue-600 transition">Instagram</button>
+                        <button class="bg-black text-white font-bold py-3 px-6 rounded hover:bg-gray-800 transition">X</button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-         <div>
-            <h2 class="tiga">1</h2>
-            <p>Klien Puas</p>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section py-17 bg-gradient-to-bl from-purple-800 to-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">My Portfolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <img src="https://via.placeholder.com/400x250/7c3aed/ffffff?text=Project+1" alt="Project 1" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">E-Commerce Website</h3>
+                    <p class="text-gray-600 mb-4">A full-stack e-commerce platform built with React and Node.js.</p>
+                    <a href="#" class="text-purple-600 hover:underline">View Project</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <img src="https://via.placeholder.com/400x250/7c3aed/ffffff?text=Project+2" alt="Project 2" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
+                    <p class="text-gray-600 mb-4">A productivity app using Vue.js and Firebase for real-time collaboration.</p>
+                    <a href="#" class="text-purple-600 hover:underline">View Project</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <img src="https://via.placeholder.com/400x250/7c3aed/ffffff?text=Project+3" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">AI Chatbot</h3>
+                    <p class="text-gray-600 mb-4">An intelligent chatbot powered by OpenAI API and integrated with web interfaces.</p>
+                    <a href="#" class="text-purple-600 hover:underline">View Project</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <img src="https://via.placeholder.com/400x250/7c3aed/ffffff?text=Project+4" alt="Project 4" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
+                    <p class="text-gray-600 mb-4">A responsive portfolio site showcasing projects and skills.</p>
+                    <a href="#" class="text-purple-600 hover:underline">View Project</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <img src="https://via.placeholder.com/400x250/7c3aed/ffffff?text=Project+5" alt="Project 5" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Weather Dashboard</h3>
+                    <p class="text-gray-600 mb-4">A weather app with real-time data and beautiful visualizations.</p>
+                    <a href="#" class="text-purple-600 hover:underline">View Project</a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div>
-            <h2 class="empat">2</h2>
-            <p>Proyek</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contact Me</h2>
+            <div class="max-w-md mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">Send Message</button>
+                </form>
+            </div>
         </div>
+    </section>
 
-    </div>
-
-    <div class="about">
-        <div>
-            <h2 class="satu">Tentang Saya</h2>
-            <p>Halo! Saya Juan, seorang mahasiswa Informatika dari Universitas Dian Nuswantoro (Udinus) yang memiliki ketertarikan kuat pada teknologi, 
-                pemrograman. Saya senang mempelajari hal baru dan menerapkan 
-                pengetahuan secara praktis melalui proyek-proyek mandiri, terutama di bidang pengembangan web, 
-                AI, dan keamanan siber.
-            </p>
-            <button>Hubungi Saya</button>
-        </div>
-
-         <div>
-            <h2 class="dua">Fullstack Web Develpoer</h2>
-            <p>Seorang Pengembang Web Full Stack yang memiliki ketertarikan besar pada teknologi, pemrograman, dan pengembangan sistem cerdas.</p>
-        </div>
-      </div>
-
-      
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-      <script src="js/script.js"></script>
 
 </body>
-
 </html>

@@ -18,11 +18,12 @@
         <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="text-2xl font-bold text-purple-600">Juan Richard</div>
             <div class="hidden md:flex space-x-6">
-                <a href="#hero" class="hover:text-purple-600 transition">Home</a>
-                <a href="#portfolio" class="hover:text-purple-600 transition">Portfolio</a>
-                <a href="#contact" class="hover:text-purple-600 transition">Contact</a>
+                <a href="#hero" class="hover:text-purple-600 transition text-2xl">Home</a>
+                <a href="#portfolio" class="hover:text-purple-600 transition text-2xl">Portfolio</a>
+                <a href="#certificates" class="hover:text-purple-600 transition text-2xl">Certificate</a>
+                <a href="#contact" class="hover:text-purple-600 transition text-2xl">Contact</a>
             </div>
-            <button class="md:hidden text-purple-600" id="menu-toggle">
+            <button class="md:hidden text-purple-600 " id="menu-toggle">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
@@ -41,7 +42,7 @@
     <section id="hero" class="hero-section min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 flex items-center justify-center p-4">
         <div class="max-w-6xl w-full bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-purple-500/30 shadow-2xl">
             <div class="flex flex-col md:flex-row items-center gap-8">
-                <img class="w-full md:w-1/2 rounded-xl border border-purple-500 shadow-lg" src="https://gerold.themejunction.net/wp-content/uploads/2024/05/hero-2.png" alt="Juan Richard">
+                <img class="w-full md:w-1/2 rounded-xl border border-purple-500 shadow-lg" src="/images/Jack.png" alt="Juan Richard">
                 <div class="text-center md:text-left">
                     <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
                         Hello, I'm Juan Richard -<br>
@@ -52,55 +53,112 @@
                         and I love what I do. Just simple like that!
                     </p>
                     <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                        <button class="bg-purple-600 text-white font-bold py-3 px-6 rounded hover:bg-purple-700 transition">Work</button>
-                        <button class="bg-blue-500 text-white font-bold py-3 px-6 rounded hover:bg-blue-600 transition">Instagram</button>
-                        <button class="bg-black text-white font-bold py-3 px-6 rounded hover:bg-gray-800 transition">X</button>
+                        <a href="https://www.instagram.com/juansabarofek/"  class="bg-purple-600 text-white font-bold py-3 px-6 rounded hover:bg-purple-700 transition" target="_blank">Instagram</a> 
+                        <a href="https://www.facebook.com/juan.sabarofek.9" class="bg-blue-500 text-white font-bold py-3 px-6 rounded hover:bg-blue-600 transition" target="_blank">Facebook</a>
+                        <a href="https://github.com/Devjack404" class="bg-black text-white font-bold py-3 px-6 rounded hover:bg-blue-600 transition" target="_blank">Git-Hub</a>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Project saya -->
     <section id="portfolio" class="portfolio-section py-17 bg-gradient-to-bl from-purple-800 to-gray-900">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">My Portfolio</h2>
+            <h2 class="text-3xl text-white font-bold text-center mb-12 ">My Portfolio</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <img src="https://via.placeholder.com/400x250/7c3aed/ffffff?text=Project+1" alt="Project 1" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">E-Commerce Website</h3>
-                    <p class="text-gray-600 mb-4">A full-stack e-commerce platform built with React and Node.js.</p>
-                    <a href="#" class="text-purple-600 hover:underline">View Project</a>
+                    <img src="/images/Pomodoro.png" alt="Project 1" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Pomodoro Website</h3>
+                    <p class="text-gray-600 mb-4">Pomodoro Timer (Vanilla JS): Frontend timer dengan mode 25/5/15, lo-fi music player, dan animasi GSAP. Didesain untuk fokus.</p>
+                    <a href="https://github.com/Devjack404/Pomodoro-Timer" class="text-purple-600 hover:underline" target="_blank">View Git-Hub Project</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <img src="https://via.placeholder.com/400x250/7c3aed/ffffff?text=Project+2" alt="Project 2" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
-                    <p class="text-gray-600 mb-4">A productivity app using Vue.js and Firebase for real-time collaboration.</p>
-                    <a href="#" class="text-purple-600 hover:underline">View Project</a>
+                    <img src="https://portofolio-nu-sandy.vercel.app/assets/porto/image.png" alt="Project 2" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Project</h3>
+                    <p class="text-gray-600 mb-4">This project will be released soon — depending on the developer’s mood.</p>
+                    <a href="#" class="text-purple-600 hover:underline">Coming Soon !</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <img src="https://via.placeholder.com/400x250/7c3aed/ffffff?text=Project+3" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">AI Chatbot</h3>
-                    <p class="text-gray-600 mb-4">An intelligent chatbot powered by OpenAI API and integrated with web interfaces.</p>
-                    <a href="#" class="text-purple-600 hover:underline">View Project</a>
+                    <img src="https://portofolio-nu-sandy.vercel.app/assets/porto/image.png" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Project</h3>
+                    <p class="text-gray-600 mb-4">This project will be released soon — depending on the developer’s mood.</p>
+                    <a href="#" class="text-purple-600 hover:underline">Coming Soon !</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <img src="https://via.placeholder.com/400x250/7c3aed/ffffff?text=Project+4" alt="Project 4" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
-                    <p class="text-gray-600 mb-4">A responsive portfolio site showcasing projects and skills.</p>
-                    <a href="#" class="text-purple-600 hover:underline">View Project</a>
+                    <img src="https://portofolio-nu-sandy.vercel.app/assets/porto/image.png" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Project</h3>
+                    <p class="text-gray-600 mb-4">This project will be released soon — depending on the developer’s mood.</p>
+                    <a href="#" class="text-purple-600 hover:underline">Coming Soon !</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <img src="https://via.placeholder.com/400x250/7c3aed/ffffff?text=Project+5" alt="Project 5" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Weather Dashboard</h3>
-                    <p class="text-gray-600 mb-4">A weather app with real-time data and beautiful visualizations.</p>
-                    <a href="#" class="text-purple-600 hover:underline">View Project</a>
+                    <img src="https://portofolio-nu-sandy.vercel.app/assets/porto/image.png" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Project</h3>
+                    <p class="text-gray-600 mb-4">This project will be released soon — depending on the developer’s mood.</p>
+                    <a href="#" class="text-purple-600 hover:underline">Coming Soon !</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <img src="https://portofolio-nu-sandy.vercel.app/assets/porto/image.png" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Project</h3>
+                    <p class="text-gray-600 mb-4">This project will be released soon — depending on the developer’s mood.</p>
+                    <a href="#" class="text-purple-600 hover:underline">Coming Soon !</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+      <!-- ===== Certificates Section ===== -->
+    <section id="certificates" class="max-w-10xl mx-auto px-6 py-16 bg-gradient-to-bl from-purple-800 to-gray-900">
+        <h2 class="text-2xl text-3xl text-white font-bold text-center mb-12">Certificates</h2>
+
+        <!-- Grid untuk menampilkan beberapa sertifikat -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+            <!-- Sertifikat 1 -->
+            <div class="border rounded-xl p-4 hover:shadow-lg transition bg-gray-50">
+                <h3 class="text-lg font-semibold text-gray-900">Mengenal Pemrograman Komputer</h3>
+                <p class="text-sm text-gray-600 mt-2">Issued by: CODEPOLITAN · 2024</p>
+                <p class="text-sm text-gray-600">Credential ID: 4VH5ACI</p>
+                <a href="https://www.codepolitan.com/c/4VH5ACI/" target="_blank" class="inline-block mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">View Certificate</a>
+            </div>
+
+            <!-- Sertifikat 2 -->
+            <div class="border rounded-xl p-4 hover:shadow-lg transition bg-gray-50">
+                <h3 class="text-lg font-semibold text-gray-900">Belajar Dasar HTML </h3>
+                <p class="text-sm text-gray-600 mt-2">Issued by: CODEPOLITAN · 2025</p>
+                <p class="text-sm text-gray-600">Credential ID: QCJXDTA</p>
+                <a href="https://www.codepolitan.com/c/QCJXDTA/" target="_blank" class="inline-block mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">View Certificate</a>
+            </div>
+
+            <!-- Sertifikat 3 -->
+            <div class="border rounded-xl p-4 hover:shadow-lg transition bg-gray-50">
+                <h3 class="text-lg font-semibold text-gray-900">Belajar JavaScript </h3>
+                <p class="text-sm text-gray-600 mt-2">Issued by: C · 2025</p>
+                <p class="text-sm text-gray-600">Credential ID: WD2025</p>
+                <a href="https://www.codepolitan.com/c/QYKFRGN/" target="_blank" class="inline-block mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">View Certificate</a>
+            </div>
+
+            <!-- Sertifikat 3 -->
+            <div class="border rounded-xl p-4 hover:shadow-lg transition bg-gray-50">
+                <h3 class="text-lg font-semibold text-gray-900">Belajar Konsep OOP di JavaScript</h3>
+                <p class="text-sm text-gray-600 mt-2">Issued by: CODEPOLITAN · 2025</p>
+                <p class="text-sm text-gray-600">Credential ID: G0RWTXV</p>
+                <a href="https://www.codepolitan.com/c/G0RWTXV/" target="_blank" class="inline-block mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">View Certificate</a>
+            </div>
+
+            <!-- Sertifikat 3 -->
+            <div class="border rounded-xl p-4 hover:shadow-lg transition bg-gray-50">
+                <h3 class="text-lg font-semibold text-gray-900">Belajar JavaScript Asynchronous</h3>
+                <p class="text-sm text-gray-600 mt-2">Issued by: CODEPOLITAN · 2025</p>
+                <p class="text-sm text-gray-600">Credential ID: WD047UI</p>
+                <a href="https://www.codepolitan.com/c/WD047UI/" target="_blank" class="inline-block mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">View Certificate</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Bagian Contact -->
     <section id="contact" class="contact-section py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">Contact Me</h2>
@@ -124,6 +182,66 @@
         </div>
     </section>
 
+    <!-- Bagian Footer -->
+    <footer class="bg- border-t">
+        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-600">
+            <!-- Brand -->
+            <div>
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">Juan Richard</h2>
+            <p class="text-sm leading-relaxed">
+                Your one-stop solution for all digital needs. Crafting beautiful and functional websites to elevate your online presence.
+            </p>
 
+            <!-- Social icons -->
+            <div class="flex space-x-3 mt-4">
+                <a href="https://www.instagram.com/juansabarofek/" class="p-2 bg-pink-400 rounded hover:bg-gray-200 transition">
+                <i class="fa-brands fa-linkedin text-gray-700"></i>
+                </a>
+                <a href="https://www.facebook.com/juan.sabarofek.9" class="p-2 bg-blue-400 rounded hover:bg-gray-200 transition">
+                <i class="fa-brands fa-github text-gray-700"></i>
+                </a>
+            </div>
+            </div>
+
+            <!-- Portfolio -->
+            <div>
+            <h3 class="font-semibold text-gray-900 mb-3">Portfolio</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="#portfolio" class="hover:text-gray-900 transition">Projects</a></li>
+                <li><a href="#certificates" class="hover:text-gray-900 transition">Certificates</a></li>
+            </ul>
+            </div>
+
+            <!-- About -->
+            <div>
+            <h3 class="font-semibold text-gray-900 mb-3">About</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-gray-900 transition">About Me</a></li>
+                <li><a href="#" class="hover:text-gray-900 transition">Resume</a></li>
+            </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+            <h3 class="font-semibold text-gray-900 mb-3">Contact</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="#contact" class="hover:text-gray-900 transition">Get in Touch</a></li>
+                <li><a href="#contact" class="hover:text-gray-900 transition">Hire Me</a></li>
+                <li><a href="#contact" class="hover:text-gray-900 transition">Collaborate</a></li>
+
+            </div>
+        </div>
+
+        <div class="border-t mt-8">
+            <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between text-sm text-gray-500">
+            <p>© 2025 Juan Richard. All rights reserved.</p>
+            <div class="flex space-x-6 mt-2 md:mt-0">
+                <a href="#" class="hover:text-gray-900 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-900 transition">Terms of Service</a>
+                <a href="#" class="hover:text-gray-900 transition">Cookie Settings</a>
+            </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

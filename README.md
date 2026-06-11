@@ -16,6 +16,10 @@
 
 ---
 
+live preview : https://devjack404.github.io/Portofolio/
+
+---
+
 ## 🛠️ Teknologi yang Digunakan
 
 Proyek ini dibangun sebagai situs web statis (*vanilla*) dengan fokus pada *front-end*:

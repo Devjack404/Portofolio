@@ -1,258 +1,526 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
     <style type="text/tailwindcss">
       @theme {
-        --color-primary-bg: #0A0A0A;
-        --color-secondary-bg: #161616;
-        --color-surface-dark: #1D1D1C;
-        --color-card-bg: #232323;
-        --color-border-hover: #2C2C2C;
-        --color-secondary-border: #363636;
-        --color-muted: #454444;
+        --font-sans: 'Space Grotesk', sans-serif;
+        --font-mono: 'Space Mono', monospace;
+
+        --color-primary-bg: #000000;
+        --color-accent-bg: #0A0A0A;
+        --color-panel-bg: #111111;
+        --color-accent-cream: #F4F4F0;
         --color-text-primary: #FFFFFF;
-        --color-text-body: #E5E5E5;
         --color-text-muted: #B3B3B3;
+        --color-border-dark: #2C2C2C;
+        --color-border-light: #FFFFFF;
+
+        --animate-marquee: marquee 25s linear infinite;
+
+        @keyframes marquee {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
       }
     </style>
     <title>BTNG Web</title>
     <link rel="icon" type="image/png" href="">
+    <script src="js/script.js" defer></script>
 </head>
-<body class="bg-[#0A0A0A] text-[#E5E5E5]">
-    <!-- Navigasi Bar -->
-    <nav class="bg-[#161616] shadow-md py-4 sticky top-0 z-50 border-b border-[#2C2C2C]">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-white">Juan Richard</div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#hero" class="hover:text-[#E5E5E5] transition text-2xl text-[#B3B3B3]">Home</a>
-                <a href="#portfolio" class="hover:text-[#E5E5E5] transition text-2xl text-[#B3B3B3]">Portfolio</a>
-                <a href="#certificates" class="hover:text-[#E5E5E5] transition text-2xl text-[#B3B3B3]">Certificate</a>
-                <a href="#contact" class="hover:text-[#E5E5E5] transition text-2xl text-[#B3B3B3]">Contact</a>
+<body class="bg-[#000000] text-[#FFFFFF] font-mono selection:bg-[#F4F4F0] selection:text-black antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Global Navigation & Header (Rigid, Non-floating Top Status Bar) -->
+    <header class="w-full border-b border-[#2C2C2C] bg-[#0A0A0A] py-3 px-6 text-xs tracking-wider z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Left Side -->
+            <div>
+                <span class="text-white font-bold">juanrichard</span>
             </div>
+            
+            <!-- Right Side -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#hero" class="text-[#B3B3B3] hover:text-[#F4F4F0] transition-colors">HOME</a>
+                <a href="#portfolio" class="text-[#B3B3B3] hover:text-[#F4F4F0] transition-colors">PORTFOLIO</a>
+                <a href="#certificates" class="text-[#B3B3B3] hover:text-[#F4F4F0] transition-colors">CERTIFICATE</a>
+                <a href="#contact" class="text-[#B3B3B3] hover:text-[#F4F4F0] transition-colors">CONTACT</a>
+                <span class="text-[#F4F4F0] bg-[#000000] border border-[#2C2C2C] px-2 py-0.5 font-bold">[ DARK ]</span>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
             <button class="md:hidden text-white" id="menu-toggle">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+                <span class="border border-[#2C2C2C] px-2 py-1 hover:bg-[#111111] transition-colors">[ MENU ]</span>
             </button>
         </div>
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-4 pt-2 pb-3 space-y-1 bg-[#161616] border-t border-[#2C2C2C]">
-                <a href="#hero" class="block px-3 py-2 text-base font-medium text-[#B3B3B3] hover:text-[#E5E5E5]">Home</a>
-                <a href="#portfolio" class="block px-3 py-2 text-base font-medium text-[#B3B3B3] hover:text-[#E5E5E5]">Portfolio</a>
-                <a href="#contact" class="block px-3 py-2 text-base font-medium text-[#B3B3B3] hover:text-[#E5E5E5]">Contact</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Bagian Awal -->
-    <section id="hero" class="hero-section min-h-screen bg-[#0A0A0A] flex items-center justify-center p-4">
-        <div class="max-w-6xl w-full bg-[#1D1D1C]/50 backdrop-blur-md p-8 rounded-2xl border border-[#363636] shadow-2xl">
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <img class="w-full md:w-1/2 rounded-xl border border-[#363636] shadow-lg" src="images/Jack.png" alt="Juan Richard">
-                <div class="text-center md:text-left">
-                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
-                        Hello, I'm Juan Richard -<br>
-                        Web Developer
-                    </h1>
-                    <p class="text-lg md:text-xl text-[#B3B3B3] mb-6">
-                        I love coding and design beautifully simple things,<br>
-                        and I love what I do. Just simple like that!
-                    </p>
-                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                        <a href="https://www.instagram.com/juansabarofek/"  class="bg-[#232323] text-white font-bold py-3 px-6 rounded hover:bg-[#2C2C2C] transition border border-[#363636]" target="_blank">Instagram</a>
-                        <a href="https://www.facebook.com/juan.sabarofek.9" class="bg-[#232323] text-white font-bold py-3 px-6 rounded hover:bg-[#2C2C2C] transition border border-[#363636]" target="_blank">Facebook</a>
-                        <a href="https://github.com/Devjack404" class="bg-[#232323] text-white font-bold py-3 px-6 rounded hover:bg-[#2C2C2C] transition border border-[#363636]" target="_blank">Git Hub</a>
-                    </div>
+        <!-- Mobile Menu Container -->
+        <div class="md:hidden hidden mt-3 pt-3 border-t border-[#2C2C2C] space-y-2" id="mobile-menu">
+            <a href="#hero" class="block py-1.5 text-[#B3B3B3] hover:text-white transition-colors">HOME</a>
+            <a href="#portfolio" class="block py-1.5 text-[#B3B3B3] hover:text-white transition-colors">PORTFOLIO</a>
+            <a href="#certificates" class="block py-1.5 text-[#B3B3B3] hover:text-white transition-colors">CERTIFICATE</a>
+            <a href="#contact" class="block py-1.5 text-[#B3B3B3] hover:text-white transition-colors">CONTACT</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section & Tech Spec ("What's Inside") -->
+        <section id="hero" class="py-12 px-6">
+            <div class="max-w-7xl mx-auto border border-[#2C2C2C] grid grid-cols-1 lg:grid-cols-3 bg-[#0A0A0A] gap-0">
+                
+                <!-- Cell 1: Profile Image -->
+                <div class="border-b lg:border-b-0 lg:border-r border-[#2C2C2C] flex items-center justify-center p-8 bg-[#111111]">
+                    <div class="w-full aspect-square border border-[#2C2C2C] overflow-hidden bg-black flex items-center justify-center">
+                        <img class="w-full h-full object-cover filter grayscale contrast-125" src="images/Jack.png" alt="Juan Richard">
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Project saya -->
-    <section id="portfolio" class="portfolio-section py-16 bg-[#161616]">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl text-white font-bold text-center mb-12 ">My Portfolio</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-[#232323] p-6 rounded-lg shadow-md hover:shadow-lg transition border border-[#363636]">
-                    <img src="./images/Pomodoro.png" alt="Project 1" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Pomodoro Website</h3>
-                    <p class="text-[#B3B3B3] mb-4">Pomodoro Timer (Vanilla JS): Frontend timer dengan mode 25/5/15, lo-fi music player, dan animasi GSAP. Didesain untuk fokus.</p>
-                    <a href="https://github.com/Devjack404/Pomodoro-Timer" class="text-[#E5E5E5] hover:underline" target="_blank">View Git-Hub Project</a>
+                <!-- Cell 2: Hero Intro -->
+                <div class="border-b lg:border-b-0 lg:border-r border-[#2C2C2C] p-8 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] text-[#B3B3B3] block mb-4 tracking-widest">// PROFILE_INTRO</span>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-sans font-black text-white leading-none uppercase tracking-tighter mb-6">
+                            Hello, I'm Juan Richard —<br>Web Developer
+                        </h1>
+                        <p class="text-xs text-[#B3B3B3] leading-relaxed mb-8">
+                            I love coding and design beautifully simple things,<br>
+                            and I love what I do. Just simple like that!
+                        </p>
+                    </div>
+                    
+                    <!-- Social Buttons -->
+                    <div class="flex flex-wrap gap-2.5">
+                        <a href="https://www.instagram.com/juansabarofek/" class="flex-1 text-center bg-[#111111] hover:bg-[#F4F4F0] hover:text-black text-white py-3 px-4 border border-[#2C2C2C] transition-all duration-200 text-xs font-bold uppercase" target="_blank">Instagram</a>
+                        <a href="https://www.facebook.com/juan.sabarofek.9" class="flex-1 text-center bg-[#111111] hover:bg-[#F4F4F0] hover:text-black text-white py-3 px-4 border border-[#2C2C2C] transition-all duration-200 text-xs font-bold uppercase" target="_blank">Facebook</a>
+                        <a href="https://github.com/Devjack404" class="flex-1 text-center bg-[#111111] hover:bg-[#F4F4F0] hover:text-black text-white py-3 px-4 border border-[#2C2C2C] transition-all duration-200 text-xs font-bold uppercase" target="_blank">Git Hub</a>
+                    </div>
                 </div>
-                <div class="bg-[#232323] p-6 rounded-lg shadow-md hover:shadow-lg transition border border-[#363636]">
-                    <img src="./images/Art_Gallery.png" alt="Project 2" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Art Gallery</h3>
-                    <p class="text-[#B3B3B3] mb-4">This project i create to help my friend Echa to show her arts</p>
-                    <a href="https://echaarts.app/pages/index.html" class="text-[#E5E5E5] hover:underline">Live Preview !</a>
+
+                <!-- Cell 3: Tech Spec Box -->
+                <div class="p-8 bg-[#0A0A0A] flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center border-b border-[#2C2C2C] pb-4 mb-6">
+                            <span class="text-[10px] text-[#B3B3B3] tracking-widest">// SYSTEM_SPECIFICATION</span>
+                            <span class="text-[9px] text-green-500 tracking-wider animate-pulse">● ONLINE</span>
+                        </div>
+                        
+                        <h2 class="text-lg font-sans font-black text-white mb-6 uppercase tracking-wider">WHAT'S INSIDE</h2>
+                        
+                        <div class="space-y-4 text-xs">
+                            <div class="flex justify-between items-center border-b border-[#2C2C2C]/50 pb-2">
+                                <span class="text-[#B3B3B3]">CORE</span>
+                                <span class="text-white font-bold">HTML5</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-[#2C2C2C]/50 pb-2">
+                                <span class="text-[#B3B3B3]">STYLING</span>
+                                <span class="text-white font-bold">Tailwind CSS</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-[#2C2C2C]/50 pb-2">
+                                <span class="text-[#B3B3B3]">LOGIC</span>
+                                <span class="text-white font-bold">JavaScript (Vanilla JS)</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-[#2C2C2C]/50 pb-2">
+                                <span class="text-[#B3B3B3]">ANIMATION</span>
+                                <span class="text-white font-bold">GSAP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 border border-[#2C2C2C] p-4 bg-[#111111] text-[10px] text-[#B3B3B3] leading-relaxed">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-1.5 h-1.5 bg-green-500 inline-block"></span>
+                            <span class="font-bold text-white uppercase">STATUS: SECURE_ENVIRONMENT</span>
+                        </div>
+                        BUILD SYSTEM OK // ALL REQS MET. NO ADDITIONAL FRAMEWORKS DETECTED.
+                    </div>
                 </div>
-                <div class="bg-[#232323] p-6 rounded-lg shadow-md hover:shadow-lg transition border border-[#363636]">
-                    <img src="./images/Jago_Bicara.png" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Jago Bicara</h3>
-                    <p class="text-[#B3B3B3] mb-4">This project is a live speech website that help peapole to practice their speech skills.</p>
-                    <a href="https://jagobicara-577685837996.asia-southeast2.run.app" class="text-[#E5E5E5] hover:underline">Live Preview !</a>
+
+            </div>
+        </section>
+
+        <!-- The Cream Horizontal Ribbon -->
+        <section class="w-full bg-[#F4F4F0] text-black overflow-hidden py-3 border-y border-black font-mono font-bold text-xs tracking-widest relative">
+            <div class="flex whitespace-nowrap min-w-full animate-marquee">
+                <div class="flex shrink-0 gap-8 justify-around min-w-full uppercase">
+                    <span>HOME ◆ PORTFOLIO ◆ CERTIFICATES ◆ CONTACT ◆ HTML5 ◆ TAILWIND CSS ◆ JAVASCRIPT</span>
                 </div>
-                <div class="bg-[#232323] p-6 rounded-lg shadow-md hover:shadow-lg transition border border-[#363636]">
-                    <img src="./images/GitFind-Image.png" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2 text-white">GitFind</h3>
-                    <p class="text-[#B3B3B3] mb-4">A clean and simple web app to search any GitHub user and display their profile information in real time.</p>
-                    <a href="https://gitfind-liard.vercel.app" class="text-[#E5E5E5] hover:underline">Live Preview !</a>
-                </div>
-                <div class="bg-[#232323] p-6 rounded-lg shadow-md hover:shadow-lg transition border border-[#363636]">
-                    <img src="https://i.pinimg.com/736x/5f/6f/f6/5f6ff65f2b092855496399fb074014a1.jpg" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Project</h3>
-                    <p class="text-[#B3B3B3] mb-4">This project will be released soon </p>
-                    <a href="#" class="text-[#E5E5E5] hover:underline">Coming Soon !</a>
-                </div>
-                <div class="bg-[#232323] p-6 rounded-lg shadow-md hover:shadow-lg transition border border-[#363636]">
-                    <img src="https://i.pinimg.com/736x/5f/6f/f6/5f6ff65f2b092855496399fb074014a1.jpg" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Project</h3>
-                    <p class="text-[#B3B3B3] mb-4">This project will be released soon </p>
-                    <a href="#" class="text-[#E5E5E5] hover:underline">Coming Soon !</a>
+                <div class="flex shrink-0 gap-8 justify-around min-w-full uppercase" aria-hidden="true">
+                    <span>HOME ◆ PORTFOLIO ◆ CERTIFICATES ◆ CONTACT ◆ HTML5 ◆ TAILWIND CSS ◆ JAVASCRIPT</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-      <!-- ===== Certificates Section ===== -->
-    <section id="certificates" class="max-w-10xl mx-auto px-6 py-16 bg-[#0A0A0A]">
-        <h2 class="text-3xl text-white font-bold text-center mb-12">Certificates</h2>
+        <!-- Portfolio Section (The Feature Grid) -->
+        <section id="portfolio" class="py-16 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-baseline mb-8">
+                    <div>
+                        <span class="text-[10px] font-mono text-[#F4F4F0] border border-[#2C2C2C] px-2 py-1 bg-[#0A0A0A] uppercase tracking-wider">[ PROJECTS ]</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-sans font-black text-white uppercase tracking-tight">MY PORTFOLIO</h2>
+                </div>
+                
+                <!-- Bento grid container -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#2C2C2C] border border-[#2C2C2C]">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-[#0A0A0A] p-6 flex flex-col justify-between hover:bg-[#111111] transition-colors duration-200">
+                        <div>
+                            <div class="flex justify-between items-center mb-4 text-[10px] text-[#B3B3B3]">
+                                <span>01 / POMODORO</span>
+                                <span class="text-[#F4F4F0] border border-[#2C2C2C] px-2 py-0.5 bg-[#111111]">SOURCE CODE</span>
+                            </div>
+                            <div class="border border-[#2C2C2C] overflow-hidden mb-4 bg-black aspect-[16/10] flex items-center justify-center">
+                                <img src="./images/Pomodoro.png" alt="Project 1" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <h3 class="text-lg font-sans font-bold text-white mb-2 uppercase">Pomodoro Website</h3>
+                            <p class="text-xs text-[#B3B3B3] leading-relaxed mb-6">Pomodoro Timer (Vanilla JS): Frontend timer dengan mode 25/5/15, lo-fi music player, dan animasi GSAP. Didesain untuk fokus.</p>
+                        </div>
+                        <a href="https://github.com/Devjack404/Pomodoro-Timer" class="inline-block text-center text-xs font-bold text-black bg-[#F4F4F0] hover:bg-white hover:text-black py-2.5 px-4 border border-black transition-all duration-200 uppercase" target="_blank">View Git-Hub Project</a>
+                    </div>
 
-        <!-- Grid untuk menampilkan beberapa sertifikat -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 2 -->
+                    <div class="bg-[#0A0A0A] p-6 flex flex-col justify-between hover:bg-[#111111] transition-colors duration-200">
+                        <div>
+                            <div class="flex justify-between items-center mb-4 text-[10px] text-[#B3B3B3]">
+                                <span>02 / ART GALLERY</span>
+                                <span class="text-[#F4F4F0] border border-[#2C2C2C] px-2 py-0.5 bg-[#111111]">LIVE PREVIEW</span>
+                            </div>
+                            <div class="border border-[#2C2C2C] overflow-hidden mb-4 bg-black aspect-[16/10] flex items-center justify-center">
+                                <img src="./images/Art_Gallery.png" alt="Project 2" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <h3 class="text-lg font-sans font-bold text-white mb-2 uppercase">Art Gallery</h3>
+                            <p class="text-xs text-[#B3B3B3] leading-relaxed mb-6">This project i create to help my friend Echa to show her arts</p>
+                        </div>
+                        <a href="https://echaarts.app/pages/index.html" class="inline-block text-center text-xs font-bold text-black bg-[#F4F4F0] hover:bg-white hover:text-black py-2.5 px-4 border border-black transition-all duration-200 uppercase">Live Preview !</a>
+                    </div>
 
-            <!-- Sertifikat 1 -->
-            <div class="border border-[#363636] rounded-xl p-4 hover:shadow-lg transition bg-[#232323]">
-                <h3 class="text-lg font-semibold text-white">Mengenal Pemrograman Komputer</h3>
-                <p class="text-sm text-[#B3B3B3] mt-2">Issued by: CODEPOLITAN · 2024</p>
-                <p class="text-sm text-[#B3B3B3]">Credential ID: 4VH5ACI</p>
-                <a href="https://www.codepolitan.com/c/4VH5ACI/" target="_blank" class="inline-block mt-3 text-[#E5E5E5] hover:text-white text-sm font-medium">View Certificate</a>
+                    <!-- Card 3 -->
+                    <div class="bg-[#0A0A0A] p-6 flex flex-col justify-between hover:bg-[#111111] transition-colors duration-200">
+                        <div>
+                            <div class="flex justify-between items-center mb-4 text-[10px] text-[#B3B3B3]">
+                                <span>03 / JAGO BICARA</span>
+                                <span class="text-[#F4F4F0] border border-[#2C2C2C] px-2 py-0.5 bg-[#111111]">LIVE PREVIEW</span>
+                            </div>
+                            <div class="border border-[#2C2C2C] overflow-hidden mb-4 bg-black aspect-[16/10] flex items-center justify-center">
+                                <img src="./images/Jago_Bicara.png" alt="Project 3" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <h3 class="text-lg font-sans font-bold text-white mb-2 uppercase">Jago Bicara</h3>
+                            <p class="text-xs text-[#B3B3B3] leading-relaxed mb-6">This project is a live speech website that help peapole to practice their speech skills.</p>
+                        </div>
+                        <a href="https://jagobicara-577685837996.asia-southeast2.run.app" class="inline-block text-center text-xs font-bold text-black bg-[#F4F4F0] hover:bg-white hover:text-black py-2.5 px-4 border border-black transition-all duration-200 uppercase">Live Preview !</a>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-[#0A0A0A] p-6 flex flex-col justify-between hover:bg-[#111111] transition-colors duration-200">
+                        <div>
+                            <div class="flex justify-between items-center mb-4 text-[10px] text-[#B3B3B3]">
+                                <span>04 / GITFIND</span>
+                                <span class="text-[#F4F4F0] border border-[#2C2C2C] px-2 py-0.5 bg-[#111111]">LIVE PREVIEW</span>
+                            </div>
+                            <div class="border border-[#2C2C2C] overflow-hidden mb-4 bg-black aspect-[16/10] flex items-center justify-center">
+                                <img src="./images/GitFind-Image.png" alt="Project 3" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <h3 class="text-lg font-sans font-bold text-white mb-2 uppercase">GitFind</h3>
+                            <p class="text-xs text-[#B3B3B3] leading-relaxed mb-6">A clean and simple web app to search any GitHub user and display their profile information in real time.</p>
+                        </div>
+                        <a href="https://gitfind-liard.vercel.app" class="inline-block text-center text-xs font-bold text-black bg-[#F4F4F0] hover:bg-white hover:text-black py-2.5 px-4 border border-black transition-all duration-200 uppercase">Live Preview !</a>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="bg-[#0A0A0A] p-6 flex flex-col justify-between hover:bg-[#111111] transition-colors duration-200">
+                        <div>
+                            <div class="flex justify-between items-center mb-4 text-[10px] text-[#B3B3B3]">
+                                <span>05 / PROJECT</span>
+                                <span class="text-[#B3B3B3] border border-[#2C2C2C] px-2 py-0.5 bg-[#111111]">COMING SOON</span>
+                            </div>
+                            <div class="border border-[#2C2C2C] overflow-hidden mb-4 bg-black aspect-[16/10] flex items-center justify-center">
+                                <img src="https://i.pinimg.com/736x/5f/6f/f6/5f6ff65f2b092855496399fb074014a1.jpg" alt="Project 3" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <h3 class="text-lg font-sans font-bold text-white mb-2 uppercase">Project</h3>
+                            <p class="text-xs text-[#B3B3B3] leading-relaxed mb-6">This project will be released soon </p>
+                        </div>
+                        <a href="#" class="inline-block text-center text-xs font-bold text-[#B3B3B3] bg-[#111111] py-2.5 px-4 border border-[#2C2C2C] cursor-not-allowed uppercase">Coming Soon !</a>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="bg-[#0A0A0A] p-6 flex flex-col justify-between hover:bg-[#111111] transition-colors duration-200">
+                        <div>
+                            <div class="flex justify-between items-center mb-4 text-[10px] text-[#B3B3B3]">
+                                <span>06 / PROJECT</span>
+                                <span class="text-[#B3B3B3] border border-[#2C2C2C] px-2 py-0.5 bg-[#111111]">COMING SOON</span>
+                            </div>
+                            <div class="border border-[#2C2C2C] overflow-hidden mb-4 bg-black aspect-[16/10] flex items-center justify-center">
+                                <img src="https://i.pinimg.com/736x/5f/6f/f6/5f6ff65f2b092855496399fb074014a1.jpg" alt="Project 3" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <h3 class="text-lg font-sans font-bold text-white mb-2 uppercase">Project</h3>
+                            <p class="text-xs text-[#B3B3B3] leading-relaxed mb-6">This project will be released soon </p>
+                        </div>
+                        <a href="#" class="inline-block text-center text-xs font-bold text-[#B3B3B3] bg-[#111111] py-2.5 px-4 border border-[#2C2C2C] cursor-not-allowed uppercase">Coming Soon !</a>
+                    </div>
+
+                </div>
             </div>
+        </section>
 
-            <!-- Sertifikat 2 -->
-            <div class="border border-[#363636] rounded-xl p-4 hover:shadow-lg transition bg-[#232323]">
-                <h3 class="text-lg font-semibold text-white">Belajar Dasar HTML </h3>
-                <p class="text-sm text-[#B3B3B3] mt-2">Issued by: CODEPOLITAN · 2025</p>
-                <p class="text-sm text-[#B3B3B3]">Credential ID: QCJXDTA</p>
-                <a href="https://www.codepolitan.com/c/QCJXDTA/" target="_blank" class="inline-block mt-3 text-[#E5E5E5] hover:text-white text-sm font-medium">View Certificate</a>
+        <!-- Certificates Section (The System Certificates) -->
+        <section id="certificates" class="py-16 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-baseline mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-sans font-black text-white uppercase tracking-tight">CERTIFICATES</h2>
+                    <div>
+                        <span class="text-[10px] font-mono text-[#F4F4F0] border border-[#2C2C2C] px-2 py-1 bg-[#0A0A0A] uppercase tracking-wider">[ SYSTEM_LOG_VERIFIED ]</span>
+                    </div>
+                </div>
+
+                <!-- Certificates Grid with Shared Borders -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#2C2C2C] border border-[#2C2C2C]">
+                    
+                    <!-- Cert 1 -->
+                    <div class="bg-[#0A0A0A] p-6 flex flex-col justify-between hover:bg-[#111111] transition-colors duration-200">
+                        <div>
+                            <div class="flex justify-between items-center text-[9px] text-green-500 mb-4 tracking-widest font-mono">
+                                <span>SYS.LOG // VERIFIED</span>
+                                <span>[ 2024 ]</span>
+                            </div>
+                            <h3 class="text-base font-sans font-bold text-white mb-4 uppercase">Mengenal Pemrograman Komputer</h3>
+                            <div class="space-y-1.5 text-[11px] border-t border-[#2C2C2C] pt-3 mb-6 font-mono">
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">ISSUED_BY</span>
+                                    <span class="text-white">CODEPOLITAN</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">CREDENTIAL_ID</span>
+                                    <span class="text-white">4VH5ACI</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">STATUS</span>
+                                    <span class="text-green-500">ACTIVE</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.codepolitan.com/c/4VH5ACI/" target="_blank" class="inline-block text-center text-xs font-bold text-black bg-[#F4F4F0] hover:bg-white hover:text-black py-2.5 px-4 border border-black transition-all duration-200 uppercase">View Certificate</a>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div class="bg-[#0A0A0A] p-6 flex flex-col justify-between hover:bg-[#111111] transition-colors duration-200">
+                        <div>
+                            <div class="flex justify-between items-center text-[9px] text-green-500 mb-4 tracking-widest font-mono">
+                                <span>SYS.LOG // VERIFIED</span>
+                                <span>[ 2025 ]</span>
+                            </div>
+                            <h3 class="text-base font-sans font-bold text-white mb-4 uppercase">Belajar Dasar HTML</h3>
+                            <div class="space-y-1.5 text-[11px] border-t border-[#2C2C2C] pt-3 mb-6 font-mono">
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">ISSUED_BY</span>
+                                    <span class="text-white">CODEPOLITAN</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">CREDENTIAL_ID</span>
+                                    <span class="text-white">QCJXDTA</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">STATUS</span>
+                                    <span class="text-green-500">ACTIVE</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.codepolitan.com/c/QCJXDTA/" target="_blank" class="inline-block text-center text-xs font-bold text-black bg-[#F4F4F0] hover:bg-white hover:text-black py-2.5 px-4 border border-black transition-all duration-200 uppercase">View Certificate</a>
+                    </div>
+
+                    <!-- Cert 3 -->
+                    <div class="bg-[#0A0A0A] p-6 flex flex-col justify-between hover:bg-[#111111] transition-colors duration-200">
+                        <div>
+                            <div class="flex justify-between items-center text-[9px] text-green-500 mb-4 tracking-widest font-mono">
+                                <span>SYS.LOG // VERIFIED</span>
+                                <span>[ 2025 ]</span>
+                            </div>
+                            <h3 class="text-base font-sans font-bold text-white mb-4 uppercase">Belajar JavaScript</h3>
+                            <div class="space-y-1.5 text-[11px] border-t border-[#2C2C2C] pt-3 mb-6 font-mono">
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">ISSUED_BY</span>
+                                    <span class="text-white">CODEPOLITAN</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">CREDENTIAL_ID</span>
+                                    <span class="text-white">WD2025</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">STATUS</span>
+                                    <span class="text-green-500">ACTIVE</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.codepolitan.com/c/QYKFRGN/" target="_blank" class="inline-block text-center text-xs font-bold text-black bg-[#F4F4F0] hover:bg-white hover:text-black py-2.5 px-4 border border-black transition-all duration-200 uppercase">View Certificate</a>
+                    </div>
+
+                    <!-- Cert 4 -->
+                    <div class="bg-[#0A0A0A] p-6 flex flex-col justify-between hover:bg-[#111111] transition-colors duration-200">
+                        <div>
+                            <div class="flex justify-between items-center text-[9px] text-green-500 mb-4 tracking-widest font-mono">
+                                <span>SYS.LOG // VERIFIED</span>
+                                <span>[ 2025 ]</span>
+                            </div>
+                            <h3 class="text-base font-sans font-bold text-white mb-4 uppercase">Belajar Konsep OOP di JavaScript</h3>
+                            <div class="space-y-1.5 text-[11px] border-t border-[#2C2C2C] pt-3 mb-6 font-mono">
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">ISSUED_BY</span>
+                                    <span class="text-white">CODEPOLITAN</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">CREDENTIAL_ID</span>
+                                    <span class="text-white">G0RWTXV</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">STATUS</span>
+                                    <span class="text-green-500">ACTIVE</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.codepolitan.com/c/G0RWTXV/" target="_blank" class="inline-block text-center text-xs font-bold text-black bg-[#F4F4F0] hover:bg-white hover:text-black py-2.5 px-4 border border-black transition-all duration-200 uppercase">View Certificate</a>
+                    </div>
+
+                    <!-- Cert 5 -->
+                    <div class="bg-[#0A0A0A] p-6 flex flex-col justify-between hover:bg-[#111111] transition-colors duration-200">
+                        <div>
+                            <div class="flex justify-between items-center text-[9px] text-green-500 mb-4 tracking-widest font-mono">
+                                <span>SYS.LOG // VERIFIED</span>
+                                <span>[ 2025 ]</span>
+                            </div>
+                            <h3 class="text-base font-sans font-bold text-white mb-4 uppercase">Belajar JavaScript Asynchronous</h3>
+                            <div class="space-y-1.5 text-[11px] border-t border-[#2C2C2C] pt-3 mb-6 font-mono">
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">ISSUED_BY</span>
+                                    <span class="text-white">CODEPOLITAN</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">CREDENTIAL_ID</span>
+                                    <span class="text-white">WD047UI</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-[#B3B3B3]">STATUS</span>
+                                    <span class="text-green-500">ACTIVE</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.codepolitan.com/c/WD047UI/" target="_blank" class="inline-block text-center text-xs font-bold text-black bg-[#F4F4F0] hover:bg-white hover:text-black py-2.5 px-4 border border-black transition-all duration-200 uppercase">View Certificate</a>
+                    </div>
+
+                </div>
             </div>
+        </section>
 
-            <!-- Sertifikat 3 -->
-            <div class="border border-[#363636] rounded-xl p-4 hover:shadow-lg transition bg-[#232323]">
-                <h3 class="text-lg font-semibold text-white">Belajar JavaScript </h3>
-                <p class="text-sm text-[#B3B3B3] mt-2">Issued by: CODEPOLITAN · 2025</p>
-                <p class="text-sm text-[#B3B3B3]">Credential ID: WD2025</p>
-                <a href="https://www.codepolitan.com/c/QYKFRGN/" target="_blank" class="inline-block mt-3 text-[#E5E5E5] hover:text-white text-sm font-medium">View Certificate</a>
-            </div>
-
-            <!-- Sertifikat 4 -->
-            <div class="border border-[#363636] rounded-xl p-4 hover:shadow-lg transition bg-[#232323]">
-                <h3 class="text-lg font-semibold text-white">Belajar Konsep OOP di JavaScript</h3>
-                <p class="text-sm text-[#B3B3B3] mt-2">Issued by: CODEPOLITAN · 2025</p>
-                <p class="text-sm text-[#B3B3B3]">Credential ID: G0RWTXV</p>
-                <a href="https://www.codepolitan.com/c/G0RWTXV/" target="_blank" class="inline-block mt-3 text-[#E5E5E5] hover:text-white text-sm font-medium">View Certificate</a>
-            </div>
-
-            <!-- Sertifikat 5 -->
-            <div class="border border-[#363636] rounded-xl p-4 hover:shadow-lg transition bg-[#232323]">
-                <h3 class="text-lg font-semibold text-white">Belajar JavaScript Asynchronous</h3>
-                <p class="text-sm text-[#B3B3B3] mt-2">Issued by: CODEPOLITAN · 2025</p>
-                <p class="text-sm text-[#B3B3B3]">Credential ID: WD047UI</p>
-                <a href="https://www.codepolitan.com/c/WD047UI/" target="_blank" class="inline-block mt-3 text-[#E5E5E5] hover:text-white text-sm font-medium">View Certificate</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Bagian Contact -->
-    <section id="contact" class="contact-section py-16 bg-[#161616]">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-white">Contact Me</h2>
-            <div class="max-w-md mx-auto">
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 px-6">
+            <div class="max-w-xl mx-auto bg-[#0A0A0A] border border-[#2C2C2C] p-8">
+                <div class="flex justify-between items-center border-b border-[#2C2C2C] pb-4 mb-8">
+                    <span class="text-[10px] text-[#B3B3B3] uppercase">// TERMINAL_MAIL</span>
+                    <span class="text-[10px] text-white uppercase">[ SEND MESSAGE ]</span>
+                </div>
+                
+                <h2 class="text-2xl sm:text-3xl font-sans font-black text-white text-center mb-8 uppercase tracking-tight">CONTACT ME</h2>
+                
                 <form class="space-y-6">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-white">Name</label>
-                        <input type="text" id="name" name="name" class="mt-1 block w-full px-3 py-2 border border-[#363636] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2C2C2C] focus:border-[#2C2C2C] bg-[#232323] text-white">
+                        <label for="name" class="block text-[10px] uppercase tracking-wider text-[#B3B3B3] mb-2 font-mono">Name</label>
+                        <input type="text" id="name" name="name" class="w-full bg-[#0A0A0A] text-white border-b border-[#2C2C2C] focus:border-white focus:outline-none py-2 px-1 text-sm tracking-wide transition-colors duration-200 font-mono">
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-white">Email</label>
-                        <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-[#363636] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2C2C2C] focus:border-[#2C2C2C] bg-[#232323] text-white">
+                        <label for="email" class="block text-[10px] uppercase tracking-wider text-[#B3B3B3] mb-2 font-mono">Email</label>
+                        <input type="email" id="email" name="email" class="w-full bg-[#0A0A0A] text-white border-b border-[#2C2C2C] focus:border-white focus:outline-none py-2 px-1 text-sm tracking-wide transition-colors duration-200 font-mono">
                     </div>
                     <div>
-                        <label for="message" class="block text-sm font-medium text-white">Message</label>
-                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-3 py-2 border border-[#363636] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2C2C2C] focus:border-[#2C2C2C] bg-[#232323] text-white"></textarea>
+                        <label for="message" class="block text-[10px] uppercase tracking-wider text-[#B3B3B3] mb-2 font-mono">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full bg-[#0A0A0A] text-white border border-[#2C2C2C] focus:border-white focus:outline-none p-3 text-sm tracking-wide transition-colors duration-200 resize-none font-mono"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-[#232323] text-white py-2 px-4 rounded-md hover:bg-[#2C2C2C] focus:outline-none focus:ring-2 focus:ring-[#363636] focus:ring-offset-2 focus:ring-offset-[#0A0A0A] border border-[#363636]">Send Message</button>
+                    <button type="submit" class="w-full bg-[#F4F4F0] text-black hover:bg-white hover:text-black font-bold py-4 px-6 border border-black transition-all duration-200 uppercase text-xs tracking-widest cursor-pointer">Send Message</button>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Bagian Footer -->
-    <footer class="bg-[#0A0A0A] border-t border-[#363636]">
-        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-[#B3B3B3]">
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0A0A0A] border-t border-[#2C2C2C] text-xs text-[#B3B3B3]/80">
+        <!-- Multi-column grid -->
+        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-[#2C2C2C]/50">
+            
             <!-- Brand -->
-            <div>
-            <h2 class="text-xl font-semibold text-white mb-2">Juan Richard</h2>
-            <p class="text-sm leading-relaxed text-[#E5E5E5]">
-                Your one-stop solution for all digital needs. Crafting beautiful and functional websites to elevate your online presence.
-            </p>
-
-            <!-- Social icons -->
-            <div class="flex space-x-3 mt-4">
-                <a href="https://www.instagram.com/juansabarofek/" class="p-2 bg-[#232323] rounded hover:bg-[#2C2C2C] transition border border-[#363636]">
-                <i class="fab fa-instagram text-[#E5E5E5]"></i>
-                </a>
-                <a href="https://www.facebook.com/juan.sabarofek.9" class="p-2 bg-[#232323] rounded hover:bg-[#2C2C2C] transition border border-[#363636]">
-                <i class="fab fa-facebook-f text-[#E5E5E5]"></i>
-                </a>
-            </div>
+            <div class="space-y-4">
+                <h2 class="text-base font-sans font-bold text-white uppercase tracking-wider">Juan Richard</h2>
+                <p class="leading-relaxed text-[11px] text-[#B3B3B3]/60">
+                    Your one-stop solution for all digital needs. Crafting beautiful and functional websites to elevate your online presence.
+                </p>
+                <div class="flex space-x-2">
+                    <a href="https://www.instagram.com/juansabarofek/" class="p-2 border border-[#2C2C2C]/80 hover:border-white hover:text-white transition-colors duration-200" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/juan.sabarofek.9" class="p-2 border border-[#2C2C2C]/80 hover:border-white hover:text-white transition-colors duration-200" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Portfolio -->
             <div>
-            <h3 class="font-semibold text-white mb-3">Portfolio</h3>
-            <ul class="space-y-2 text-sm">
-                <li><a href="#portfolio" class="text-[#B3B3B3] hover:text-white transition">Projects</a></li>
-                <li><a href="#certificates" class="text-[#B3B3B3] hover:text-white transition">Certificates</a></li>
-            </ul>
+                <h3 class="font-bold text-white mb-4 uppercase tracking-wider text-[11px]">// PORTFOLIO</h3>
+                <ul class="space-y-2 text-[11px]">
+                    <li><a href="#portfolio" class="hover:text-white transition-colors">Projects</a></li>
+                    <li><a href="#certificates" class="hover:text-white transition-colors">Certificates</a></li>
+                </ul>
             </div>
 
             <!-- About -->
             <div>
-            <h3 class="font-semibold text-white mb-3">About</h3>
-            <ul class="space-y-2 text-sm">
-                <li><a href="#" class="text-[#B3B3B3] hover:text-white transition">About Me</a></li>
-                <li><a href="#" class="text-[#B3B3B3] hover:text-white transition">Resume</a></li>
-            </ul>
+                <h3 class="font-bold text-white mb-4 uppercase tracking-wider text-[11px]">// ABOUT</h3>
+                <ul class="space-y-2 text-[11px]">
+                    <li><a href="#" class="hover:text-white transition-colors">About Me</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Resume</a></li>
+                </ul>
             </div>
 
             <!-- Contact -->
             <div>
-            <h3 class="font-semibold text-white mb-3">Contact</h3>
-            <ul class="space-y-2 text-sm">
-                <li><a href="#contact" class="text-[#B3B3B3] hover:text-white transition">Get in Touch</a></li>
-                <li><a href="#contact" class="text-[#B3B3B3] hover:text-white transition">Hire Me</a></li>
-                <li><a href="#contact" class="text-[#B3B3B3] hover:text-white transition">Collaborate</a></li>
-
+                <h3 class="font-bold text-white mb-4 uppercase tracking-wider text-[11px]">// CONTACT</h3>
+                <ul class="space-y-2 text-[11px]">
+                    <li><a href="#contact" class="hover:text-white transition-colors">Get in Touch</a></li>
+                    <li><a href="#contact" class="hover:text-white transition-colors">Hire Me</a></li>
+                    <li><a href="#contact" class="hover:text-white transition-colors">Collaborate</a></li>
+                </ul>
             </div>
         </div>
 
-        <div class="border-t border-[#363636] mt-8">
-            <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between text-sm text-[#454444]">
-            <p>© 2025 Juan Richard. All rights reserved.</p>
-            <div class="flex space-x-6 mt-2 md:mt-0">
-                <a href="#" class="text-[#454444] hover:text-white transition">Privacy Policy</a>
-                <a href="#" class="text-[#454444] hover:text-white transition">Terms of Service</a>
-                <a href="#" class="text-[#454444] hover:text-white transition">Cookie Settings</a>
+        <!-- Copyright segment -->
+        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+            <div class="flex flex-col md:flex-row md:items-center gap-4 text-[10px] text-[#B3B3B3]/40">
+                <p>© 2025 Juan Richard. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-[#B3B3B3]/40 font-bold">|</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-[#B3B3B3]/40 font-bold">|</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookie Settings</a>
+                </div>
             </div>
+            <div>
+                <a href="#hero" class="inline-block border border-[#2C2C2C] hover:border-white hover:text-white px-3 py-2 text-[10px] font-bold transition-all duration-200 bg-[#000000] uppercase tracking-wider">[ ^ TOP ]</a>
             </div>
         </div>
     </footer>
+
 </body>
 </html>

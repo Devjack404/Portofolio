@@ -8,56 +8,65 @@
     <link rel="stylesheet" href="css/style.css">
     <style type="text/tailwindcss">
       @theme {
-        --color-clifford: #da373d;
+        --color-primary-bg: #0A0A0A;
+        --color-secondary-bg: #161616;
+        --color-surface-dark: #1D1D1C;
+        --color-card-bg: #232323;
+        --color-border-hover: #2C2C2C;
+        --color-secondary-border: #363636;
+        --color-muted: #454444;
+        --color-text-primary: #FFFFFF;
+        --color-text-body: #E5E5E5;
+        --color-text-muted: #B3B3B3;
       }
     </style>
     <title>BTNG Web</title>
     <link rel="icon" type="image/png" href="">
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-[#0A0A0A] text-[#E5E5E5]">
     <!-- Navigasi Bar -->
-    <nav class="bg-white shadow-md py-4 sticky top-0 z-50">
+    <nav class="bg-[#161616] shadow-md py-4 sticky top-0 z-50 border-b border-[#2C2C2C]">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-purple-600">Juan Richard</div>
+            <div class="text-2xl font-bold text-white">Juan Richard</div>
             <div class="hidden md:flex space-x-6">
-                <a href="#hero" class="hover:text-purple-600 transition text-2xl">Home</a>
-                <a href="#portfolio" class="hover:text-purple-600 transition text-2xl">Portfolio</a>
-                <a href="#certificates" class="hover:text-purple-600 transition text-2xl">Certificate</a>
-                <a href="#contact" class="hover:text-purple-600 transition text-2xl">Contact</a>
+                <a href="#hero" class="hover:text-[#E5E5E5] transition text-2xl text-[#B3B3B3]">Home</a>
+                <a href="#portfolio" class="hover:text-[#E5E5E5] transition text-2xl text-[#B3B3B3]">Portfolio</a>
+                <a href="#certificates" class="hover:text-[#E5E5E5] transition text-2xl text-[#B3B3B3]">Certificate</a>
+                <a href="#contact" class="hover:text-[#E5E5E5] transition text-2xl text-[#B3B3B3]">Contact</a>
             </div>
-            <button class="md:hidden text-purple-600 " id="menu-toggle">
+            <button class="md:hidden text-white" id="menu-toggle">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
         <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-4 pt-2 pb-3 space-y-1 bg-white border-t">
-                <a href="#hero" class="block px-3 py-2 text-base font-medium hover:text-purple-600">Home</a>
-                <a href="#portfolio" class="block px-3 py-2 text-base font-medium hover:text-purple-600">Portfolio</a>
-                <a href="#contact" class="block px-3 py-2 text-base font-medium hover:text-purple-600">Contact</a>
+            <div class="px-4 pt-2 pb-3 space-y-1 bg-[#161616] border-t border-[#2C2C2C]">
+                <a href="#hero" class="block px-3 py-2 text-base font-medium text-[#B3B3B3] hover:text-[#E5E5E5]">Home</a>
+                <a href="#portfolio" class="block px-3 py-2 text-base font-medium text-[#B3B3B3] hover:text-[#E5E5E5]">Portfolio</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-[#B3B3B3] hover:text-[#E5E5E5]">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Bagian Awal -->
-    <section id="hero" class="hero-section min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 flex items-center justify-center p-4">
-        <div class="max-w-6xl w-full bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-purple-500/30 shadow-2xl">
+    <section id="hero" class="hero-section min-h-screen bg-[#0A0A0A] flex items-center justify-center p-4">
+        <div class="max-w-6xl w-full bg-[#1D1D1C]/50 backdrop-blur-md p-8 rounded-2xl border border-[#363636] shadow-2xl">
             <div class="flex flex-col md:flex-row items-center gap-8">
-                <img class="w-full md:w-1/2 rounded-xl border border-purple-500 shadow-lg" src="images/Jack.png" alt="Juan Richard">
+                <img class="w-full md:w-1/2 rounded-xl border border-[#363636] shadow-lg" src="images/Jack.png" alt="Juan Richard">
                 <div class="text-center md:text-left">
                     <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
                         Hello, I'm Juan Richard -<br>
                         Web Developer
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-300 mb-6">
+                    <p class="text-lg md:text-xl text-[#B3B3B3] mb-6">
                         I love coding and design beautifully simple things,<br>
                         and I love what I do. Just simple like that!
                     </p>
                     <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                        <a href="https://www.instagram.com/juansabarofek/"  class="bg-purple-600 text-white font-bold py-3 px-6 rounded hover:bg-purple-700 transition" target="_blank">Instagram</a>
-                        <a href="https://www.facebook.com/juan.sabarofek.9" class="bg-blue-500 text-white font-bold py-3 px-6 rounded hover:bg-blue-600 transition" target="_blank">Facebook</a>
-                        <a href="https://github.com/Devjack404" class="bg-black text-white font-bold py-3 px-6 rounded hover:bg-blue-600 transition" target="_blank">Git Hub</a>
+                        <a href="https://www.instagram.com/juansabarofek/"  class="bg-[#232323] text-white font-bold py-3 px-6 rounded hover:bg-[#2C2C2C] transition border border-[#363636]" target="_blank">Instagram</a>
+                        <a href="https://www.facebook.com/juan.sabarofek.9" class="bg-[#232323] text-white font-bold py-3 px-6 rounded hover:bg-[#2C2C2C] transition border border-[#363636]" target="_blank">Facebook</a>
+                        <a href="https://github.com/Devjack404" class="bg-[#232323] text-white font-bold py-3 px-6 rounded hover:bg-[#2C2C2C] transition border border-[#363636]" target="_blank">Git Hub</a>
                     </div>
                     </div>
                 </div>
@@ -66,141 +75,141 @@
     </section>
 
     <!-- Project saya -->
-    <section id="portfolio" class="portfolio-section py-16 bg-gradient-to-bl from-purple-800 to-gray-900">
+    <section id="portfolio" class="portfolio-section py-16 bg-[#161616]">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl text-white font-bold text-center mb-12 ">My Portfolio</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <div class="bg-[#232323] p-6 rounded-lg shadow-md hover:shadow-lg transition border border-[#363636]">
                     <img src="./images/Pomodoro.png" alt="Project 1" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Pomodoro Website</h3>
-                    <p class="text-gray-600 mb-4">Pomodoro Timer (Vanilla JS): Frontend timer dengan mode 25/5/15, lo-fi music player, dan animasi GSAP. Didesain untuk fokus.</p>
-                    <a href="https://github.com/Devjack404/Pomodoro-Timer" class="text-purple-600 hover:underline" target="_blank">View Git-Hub Project</a>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Pomodoro Website</h3>
+                    <p class="text-[#B3B3B3] mb-4">Pomodoro Timer (Vanilla JS): Frontend timer dengan mode 25/5/15, lo-fi music player, dan animasi GSAP. Didesain untuk fokus.</p>
+                    <a href="https://github.com/Devjack404/Pomodoro-Timer" class="text-[#E5E5E5] hover:underline" target="_blank">View Git-Hub Project</a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <div class="bg-[#232323] p-6 rounded-lg shadow-md hover:shadow-lg transition border border-[#363636]">
                     <img src="./images/Art_Gallery.png" alt="Project 2" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Art Gallery</h3>
-                    <p class="text-gray-600 mb-4">This project i create to help my friend Echa to show her arts</p>
-                    <a href="https://echaarts.app/pages/index.html" class="text-purple-600 hover:underline">Live Preview !</a>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Art Gallery</h3>
+                    <p class="text-[#B3B3B3] mb-4">This project i create to help my friend Echa to show her arts</p>
+                    <a href="https://echaarts.app/pages/index.html" class="text-[#E5E5E5] hover:underline">Live Preview !</a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <div class="bg-[#232323] p-6 rounded-lg shadow-md hover:shadow-lg transition border border-[#363636]">
                     <img src="./images/Jago_Bicara.png" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Jago Bicara</h3>
-                    <p class="text-gray-600 mb-4">This project is a live speech website that help peapole to practice their speech skills.</p>
-                    <a href="https://jagobicara-577685837996.asia-southeast2.run.app" class="text-purple-600 hover:underline">Live Preview !</a>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Jago Bicara</h3>
+                    <p class="text-[#B3B3B3] mb-4">This project is a live speech website that help peapole to practice their speech skills.</p>
+                    <a href="https://jagobicara-577685837996.asia-southeast2.run.app" class="text-[#E5E5E5] hover:underline">Live Preview !</a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <div class="bg-[#232323] p-6 rounded-lg shadow-md hover:shadow-lg transition border border-[#363636]">
                     <img src="./images/GitFind-Image.png" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">GitFind</h3>
-                    <p class="text-gray-600 mb-4">A clean and simple web app to search any GitHub user and display their profile information in real time.</p>
-                    <a href="https://gitfind-liard.vercel.app" class="text-purple-600 hover:underline">Live Preview !</a>
+                    <h3 class="text-xl font-semibold mb-2 text-white">GitFind</h3>
+                    <p class="text-[#B3B3B3] mb-4">A clean and simple web app to search any GitHub user and display their profile information in real time.</p>
+                    <a href="https://gitfind-liard.vercel.app" class="text-[#E5E5E5] hover:underline">Live Preview !</a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <div class="bg-[#232323] p-6 rounded-lg shadow-md hover:shadow-lg transition border border-[#363636]">
                     <img src="https://i.pinimg.com/736x/5f/6f/f6/5f6ff65f2b092855496399fb074014a1.jpg" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Project</h3>
-                    <p class="text-gray-600 mb-4">This project will be released soon </p>
-                    <a href="#" class="text-purple-600 hover:underline">Coming Soon !</a>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Project</h3>
+                    <p class="text-[#B3B3B3] mb-4">This project will be released soon </p>
+                    <a href="#" class="text-[#E5E5E5] hover:underline">Coming Soon !</a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <div class="bg-[#232323] p-6 rounded-lg shadow-md hover:shadow-lg transition border border-[#363636]">
                     <img src="https://i.pinimg.com/736x/5f/6f/f6/5f6ff65f2b092855496399fb074014a1.jpg" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Project</h3>
-                    <p class="text-gray-600 mb-4">This project will be released soon </p>
-                    <a href="#" class="text-purple-600 hover:underline">Coming Soon !</a>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Project</h3>
+                    <p class="text-[#B3B3B3] mb-4">This project will be released soon </p>
+                    <a href="#" class="text-[#E5E5E5] hover:underline">Coming Soon !</a>
                 </div>
             </div>
         </div>
     </section>
 
       <!-- ===== Certificates Section ===== -->
-    <section id="certificates" class="max-w-10xl mx-auto px-6 py-16 bg-gradient-to-br from-gray-900 to-purple-900 ">
+    <section id="certificates" class="max-w-10xl mx-auto px-6 py-16 bg-[#0A0A0A]">
         <h2 class="text-3xl text-white font-bold text-center mb-12">Certificates</h2>
 
         <!-- Grid untuk menampilkan beberapa sertifikat -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <!-- Sertifikat 1 -->
-            <div class="border rounded-xl p-4 hover:shadow-lg transition bg-gray-50">
-                <h3 class="text-lg font-semibold text-gray-900">Mengenal Pemrograman Komputer</h3>
-                <p class="text-sm text-gray-600 mt-2">Issued by: CODEPOLITAN · 2024</p>
-                <p class="text-sm text-gray-600">Credential ID: 4VH5ACI</p>
-                <a href="https://www.codepolitan.com/c/4VH5ACI/" target="_blank" class="inline-block mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">View Certificate</a>
+            <div class="border border-[#363636] rounded-xl p-4 hover:shadow-lg transition bg-[#232323]">
+                <h3 class="text-lg font-semibold text-white">Mengenal Pemrograman Komputer</h3>
+                <p class="text-sm text-[#B3B3B3] mt-2">Issued by: CODEPOLITAN · 2024</p>
+                <p class="text-sm text-[#B3B3B3]">Credential ID: 4VH5ACI</p>
+                <a href="https://www.codepolitan.com/c/4VH5ACI/" target="_blank" class="inline-block mt-3 text-[#E5E5E5] hover:text-white text-sm font-medium">View Certificate</a>
             </div>
 
             <!-- Sertifikat 2 -->
-            <div class="border rounded-xl p-4 hover:shadow-lg transition bg-gray-50">
-                <h3 class="text-lg font-semibold text-gray-900">Belajar Dasar HTML </h3>
-                <p class="text-sm text-gray-600 mt-2">Issued by: CODEPOLITAN · 2025</p>
-                <p class="text-sm text-gray-600">Credential ID: QCJXDTA</p>
-                <a href="https://www.codepolitan.com/c/QCJXDTA/" target="_blank" class="inline-block mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">View Certificate</a>
+            <div class="border border-[#363636] rounded-xl p-4 hover:shadow-lg transition bg-[#232323]">
+                <h3 class="text-lg font-semibold text-white">Belajar Dasar HTML </h3>
+                <p class="text-sm text-[#B3B3B3] mt-2">Issued by: CODEPOLITAN · 2025</p>
+                <p class="text-sm text-[#B3B3B3]">Credential ID: QCJXDTA</p>
+                <a href="https://www.codepolitan.com/c/QCJXDTA/" target="_blank" class="inline-block mt-3 text-[#E5E5E5] hover:text-white text-sm font-medium">View Certificate</a>
             </div>
 
             <!-- Sertifikat 3 -->
-            <div class="border rounded-xl p-4 hover:shadow-lg transition bg-gray-50">
-                <h3 class="text-lg font-semibold text-gray-900">Belajar JavaScript </h3>
-                <p class="text-sm text-gray-600 mt-2">Issued by: CODEPOLITAN · 2025</p>
-                <p class="text-sm text-gray-600">Credential ID: WD2025</p>
-                <a href="https://www.codepolitan.com/c/QYKFRGN/" target="_blank" class="inline-block mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">View Certificate</a>
+            <div class="border border-[#363636] rounded-xl p-4 hover:shadow-lg transition bg-[#232323]">
+                <h3 class="text-lg font-semibold text-white">Belajar JavaScript </h3>
+                <p class="text-sm text-[#B3B3B3] mt-2">Issued by: CODEPOLITAN · 2025</p>
+                <p class="text-sm text-[#B3B3B3]">Credential ID: WD2025</p>
+                <a href="https://www.codepolitan.com/c/QYKFRGN/" target="_blank" class="inline-block mt-3 text-[#E5E5E5] hover:text-white text-sm font-medium">View Certificate</a>
             </div>
 
-            <!-- Sertifikat 3 -->
-            <div class="border rounded-xl p-4 hover:shadow-lg transition bg-gray-50">
-                <h3 class="text-lg font-semibold text-gray-900">Belajar Konsep OOP di JavaScript</h3>
-                <p class="text-sm text-gray-600 mt-2">Issued by: CODEPOLITAN · 2025</p>
-                <p class="text-sm text-gray-600">Credential ID: G0RWTXV</p>
-                <a href="https://www.codepolitan.com/c/G0RWTXV/" target="_blank" class="inline-block mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">View Certificate</a>
+            <!-- Sertifikat 4 -->
+            <div class="border border-[#363636] rounded-xl p-4 hover:shadow-lg transition bg-[#232323]">
+                <h3 class="text-lg font-semibold text-white">Belajar Konsep OOP di JavaScript</h3>
+                <p class="text-sm text-[#B3B3B3] mt-2">Issued by: CODEPOLITAN · 2025</p>
+                <p class="text-sm text-[#B3B3B3]">Credential ID: G0RWTXV</p>
+                <a href="https://www.codepolitan.com/c/G0RWTXV/" target="_blank" class="inline-block mt-3 text-[#E5E5E5] hover:text-white text-sm font-medium">View Certificate</a>
             </div>
 
-            <!-- Sertifikat 3 -->
-            <div class="border rounded-xl p-4 hover:shadow-lg transition bg-gray-50">
-                <h3 class="text-lg font-semibold text-gray-900">Belajar JavaScript Asynchronous</h3>
-                <p class="text-sm text-gray-600 mt-2">Issued by: CODEPOLITAN · 2025</p>
-                <p class="text-sm text-gray-600">Credential ID: WD047UI</p>
-                <a href="https://www.codepolitan.com/c/WD047UI/" target="_blank" class="inline-block mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">View Certificate</a>
+            <!-- Sertifikat 5 -->
+            <div class="border border-[#363636] rounded-xl p-4 hover:shadow-lg transition bg-[#232323]">
+                <h3 class="text-lg font-semibold text-white">Belajar JavaScript Asynchronous</h3>
+                <p class="text-sm text-[#B3B3B3] mt-2">Issued by: CODEPOLITAN · 2025</p>
+                <p class="text-sm text-[#B3B3B3]">Credential ID: WD047UI</p>
+                <a href="https://www.codepolitan.com/c/WD047UI/" target="_blank" class="inline-block mt-3 text-[#E5E5E5] hover:text-white text-sm font-medium">View Certificate</a>
             </div>
 
         </div>
     </section>
 
     <!-- Bagian Contact -->
-    <section id="contact" class="contact-section py-16 bg-gradient-to-bl from-purple-800 to-gray-900">
+    <section id="contact" class="contact-section py-16 bg-[#161616]">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12 text-white">Contact Me</h2>
             <div class="max-w-md mx-auto">
                 <form class="space-y-6">
                     <div>
                         <label for="name" class="block text-sm font-medium text-white">Name</label>
-                        <input type="text" id="name" name="name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 text-white">
+                        <input type="text" id="name" name="name" class="mt-1 block w-full px-3 py-2 border border-[#363636] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2C2C2C] focus:border-[#2C2C2C] bg-[#232323] text-white">
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 text-white">Email</label>
-                        <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 text-white">
+                        <label for="email" class="block text-sm font-medium text-white">Email</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-[#363636] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2C2C2C] focus:border-[#2C2C2C] bg-[#232323] text-white">
                     </div>
                     <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700 text-white">Message</label>
-                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 text-white"></textarea>
+                        <label for="message" class="block text-sm font-medium text-white">Message</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-3 py-2 border border-[#363636] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2C2C2C] focus:border-[#2C2C2C] bg-[#232323] text-white"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">Send Message</button>
+                    <button type="submit" class="w-full bg-[#232323] text-white py-2 px-4 rounded-md hover:bg-[#2C2C2C] focus:outline-none focus:ring-2 focus:ring-[#363636] focus:ring-offset-2 focus:ring-offset-[#0A0A0A] border border-[#363636]">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Bagian Footer -->
-    <footer class="bg-gray-900 border-t">
-        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-300">
+    <footer class="bg-[#0A0A0A] border-t border-[#363636]">
+        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-[#B3B3B3]">
             <!-- Brand -->
             <div>
             <h2 class="text-xl font-semibold text-white mb-2">Juan Richard</h2>
-            <p class="text-sm leading-relaxed text-white">
+            <p class="text-sm leading-relaxed text-[#E5E5E5]">
                 Your one-stop solution for all digital needs. Crafting beautiful and functional websites to elevate your online presence.
             </p>
 
             <!-- Social icons -->
             <div class="flex space-x-3 mt-4">
-                <a href="https://www.instagram.com/juansabarofek/" class="p-2 bg-pink-400 rounded hover:bg-gray-200 transition">
-                <i class="fab fa-instagram text-gray-700"></i>
+                <a href="https://www.instagram.com/juansabarofek/" class="p-2 bg-[#232323] rounded hover:bg-[#2C2C2C] transition border border-[#363636]">
+                <i class="fab fa-instagram text-[#E5E5E5]"></i>
                 </a>
-                <a href="https://www.facebook.com/juan.sabarofek.9" class="p-2 bg-blue-400 rounded hover:bg-gray-200 transition">
-                <i class="fab fa-facebook-f text-gray-700"></i>
+                <a href="https://www.facebook.com/juan.sabarofek.9" class="p-2 bg-[#232323] rounded hover:bg-[#2C2C2C] transition border border-[#363636]">
+                <i class="fab fa-facebook-f text-[#E5E5E5]"></i>
                 </a>
             </div>
             </div>
@@ -209,8 +218,8 @@
             <div>
             <h3 class="font-semibold text-white mb-3">Portfolio</h3>
             <ul class="space-y-2 text-sm">
-                <li><a href="#portfolio" class="hover:text-white transition">Projects</a></li>
-                <li><a href="#certificates" class="hover:text-white transition">Certificates</a></li>
+                <li><a href="#portfolio" class="text-[#B3B3B3] hover:text-white transition">Projects</a></li>
+                <li><a href="#certificates" class="text-[#B3B3B3] hover:text-white transition">Certificates</a></li>
             </ul>
             </div>
 
@@ -218,8 +227,8 @@
             <div>
             <h3 class="font-semibold text-white mb-3">About</h3>
             <ul class="space-y-2 text-sm">
-                <li><a href="#" class="hover:text-white transition">About Me</a></li>
-                <li><a href="#" class="hover:text-white transition">Resume</a></li>
+                <li><a href="#" class="text-[#B3B3B3] hover:text-white transition">About Me</a></li>
+                <li><a href="#" class="text-[#B3B3B3] hover:text-white transition">Resume</a></li>
             </ul>
             </div>
 
@@ -227,20 +236,20 @@
             <div>
             <h3 class="font-semibold text-white mb-3">Contact</h3>
             <ul class="space-y-2 text-sm">
-                <li><a href="#contact" class="hover:text-white transition">Get in Touch</a></li>
-                <li><a href="#contact" class="hover:text-white transition">Hire Me</a></li>
-                <li><a href="#contact" class="hover:text-white transition">Collaborate</a></li>
+                <li><a href="#contact" class="text-[#B3B3B3] hover:text-white transition">Get in Touch</a></li>
+                <li><a href="#contact" class="text-[#B3B3B3] hover:text-white transition">Hire Me</a></li>
+                <li><a href="#contact" class="text-[#B3B3B3] hover:text-white transition">Collaborate</a></li>
 
             </div>
         </div>
 
-        <div class="border-t mt-8">
-            <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between text-sm text-gray-500">
+        <div class="border-t border-[#363636] mt-8">
+            <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between text-sm text-[#454444]">
             <p>© 2025 Juan Richard. All rights reserved.</p>
             <div class="flex space-x-6 mt-2 md:mt-0">
-                <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                <a href="#" class="hover:text-white transition">Terms of Service</a>
-                <a href="#" class="hover:text-white transition">Cookie Settings</a>
+                <a href="#" class="text-[#454444] hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="text-[#454444] hover:text-white transition">Terms of Service</a>
+                <a href="#" class="text-[#454444] hover:text-white transition">Cookie Settings</a>
             </div>
             </div>
         </div>

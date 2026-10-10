@@ -59,9 +59,10 @@
         --border-light: #000000;
       }
     </style>
-    <title>BTNG Web</title>
+    <title>Juan Richard Portofolio</title>
     <link rel="icon" type="image/png" href="">
     <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
 </head>
 <body class="bg-primary-bg text-text-primary font-mono selection:bg-accent-cream selection:text-primary-bg antialiased min-h-screen flex flex-col justify-between transition-colors duration-300">
 
@@ -483,20 +484,68 @@
                 
                 <h2 class="text-2xl sm:text-3xl font-sans font-black text-text-primary text-center mb-8 uppercase tracking-tight">CONTACT ME</h2>
                 
-                <form class="space-y-6">
+
+                <form
+                    action="https://send.pageclip.co/KmYqD22AofujlE9T6N7nb9X3ghtB9DZs"
+                    class="pageclip-form space-y-6"
+                    method="post"
+                >
                     <div>
-                        <label for="name" class="block text-[10px] uppercase tracking-wider text-text-muted mb-2 font-mono">Name</label>
-                        <input type="text" id="name" name="name" class="w-full bg-accent-bg text-text-primary border-b border-border-dark focus:border-text-primary focus:outline-none py-2 px-1 text-sm tracking-wide transition-colors duration-200 font-mono">
+                        <label
+                            for="name"
+                            class="block text-[10px] uppercase tracking-wider text-text-muted mb-2 font-mono"
+                        >
+                            Name
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value="Juan Richard"
+                            required
+                            class="w-full bg-accent-bg text-text-primary border-b border-border-dark focus:border-text-primary focus:outline-none py-2 px-1 text-sm tracking-wide transition-colors duration-200 font-mono"
+                        >
                     </div>
+                
                     <div>
-                        <label for="email" class="block text-[10px] uppercase tracking-wider text-text-muted mb-2 font-mono">Email</label>
-                        <input type="email" id="email" name="email" class="w-full bg-accent-bg text-text-primary border-b border-border-dark focus:border-text-primary focus:outline-none py-2 px-1 text-sm tracking-wide transition-colors duration-200 font-mono">
+                        <label
+                            for="email"
+                            class="block text-[10px] uppercase tracking-wider text-text-muted mb-2 font-mono"
+                        >
+                            Email
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value="juansabarofek@gmail.com"
+                            required
+                            class="w-full bg-accent-bg text-text-primary border-b border-border-dark focus:border-text-primary focus:outline-none py-2 px-1 text-sm tracking-wide transition-colors duration-200 font-mono"
+                        >
                     </div>
+                
                     <div>
-                        <label for="message" class="block text-[10px] uppercase tracking-wider text-text-muted mb-2 font-mono">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full bg-accent-bg text-text-primary border border-border-dark focus:border-text-primary focus:outline-none p-3 text-sm tracking-wide transition-colors duration-200 resize-none font-mono"></textarea>
+                        <label
+                            for="message"
+                            class="block text-[10px] uppercase tracking-wider text-text-muted mb-2 font-mono"
+                        >
+                            Message
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            required
+                            class="w-full bg-accent-bg text-text-primary border border-border-dark focus:border-text-primary focus:outline-none p-3 text-sm tracking-wide transition-colors duration-200 resize-none font-mono"
+                        ></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-accent-cream text-primary-bg hover:bg-text-primary hover:text-accent-cream font-bold py-4 px-6 border border-border-light transition-all duration-300 uppercase text-xs tracking-widest cursor-pointer">Send Message</button>
+                
+                    <button
+                        type="submit"
+                        class="pageclip-form__submit w-full bg-accent-cream text-primary-bg hover:bg-text-primary hover:text-accent-cream font-bold py-4 px-6 border border-border-light transition-all duration-300 uppercase text-xs tracking-widest cursor-pointer"
+                    >
+                        <span>Send Message</span>
+                    </button>
                 </form>
             </div>
         </section>
@@ -569,6 +618,8 @@
                 <a href="#hero" class="inline-block border border-border-dark hover:border-text-primary hover:text-text-primary px-3 py-2 text-[10px] font-bold transition-all duration-300 bg-primary-bg uppercase tracking-wider">[ ^ TOP ]</a>
             </div>
         </div>
+
+        <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
     </footer>
 
 </body>
